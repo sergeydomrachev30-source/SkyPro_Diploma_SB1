@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "skypro-diplom-sb1"
+version = "0.1.0"
+description = "Дипломный проект SB1 - Доска объявлений"
+authors = ["Sergey <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^4.2"
+djangorestframework = "*"
+django-cors-headers = "*"
+django-filter = "*"
+pillow = "*"
+psycopg2-binary = "*"
+djangorestframework-simplejwt = "*"
+drf-yasg = "*"
+pytest-django = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
