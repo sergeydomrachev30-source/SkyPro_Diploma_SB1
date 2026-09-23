@@ -16,6 +16,7 @@ psycopg2-binary = "*"
 djangorestframework-simplejwt = "*"
 drf-yasg = "*"
 pytest-django = "*"
+python-dotenv = "^1.2.3"
 
 [build-system]
 requires = ["poetry-core"]
