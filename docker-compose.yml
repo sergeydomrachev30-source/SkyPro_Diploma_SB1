@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: diploma_postgres_db
+    # Docker автоматически подставит значения из файла .env
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  web:
+    build: .
+    container_name: diploma_django_web
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    # Передаем файл .env целиком внутрь контейнера Django
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - django_media:/app/media
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+  django_media:

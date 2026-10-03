@@ -1,0 +1,57 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.15, pytest-9.1.1, pluggy-1.6.0
+django: version: 4.2.30, settings: config.settings (from ini)
+rootdir: /app
+configfile: pytest.ini
+plugins: cov-7.1.0, django-4.14.0
+collected 18 items
+
+ads/test_ads.py ...........                                              [ 61%]
+users/test_users.py .......                                              [100%]
+
+=============================== warnings summary ===============================
+ads/test_ads.py::test_anonymous_can_get_ads_list
+  /usr/local/lib/python3.12/site-packages/drf_yasg/views.py:100: DeprecationWarning: SwaggerJSONRenderer & SwaggerYAMLRenderer's `format` has changed to not include a `.` prefix, please silence this warning by setting `SWAGGER_USE_COMPAT_RENDERERS = False` in your Django settings and ensure your application works (check your URLCONF and swagger/redoc URLs).
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.15-final-0 _______________
+
+Name                                          Stmts   Miss  Cover   Missing
+---------------------------------------------------------------------------
+ads/__init__.py                                   0      0   100%
+ads/admin.py                                     12      0   100%
+ads/apps.py                                       5      0   100%
+ads/migrations/0001_initial.py                    7      0   100%
+ads/migrations/0002_alter_ad_author.py            6      0   100%
+ads/migrations/__init__.py                        0      0   100%
+ads/models.py                                    25      2    92%   41, 79
+ads/permissions.py                                8      1    88%   16
+ads/serializers.py                               13      0   100%
+ads/test_ads.py                                  92      0   100%
+ads/tests.py                                      1      0   100%
+ads/urls.py                                       6      0   100%
+ads/views.py                                     40      1    98%   83
+config/__init__.py                                0      0   100%
+config/asgi.py                                    4      4     0%   10-16
+config/settings.py                               30      0   100%
+config/urls.py                                   12      0   100%
+config/wsgi.py                                    4      4     0%   10-16
+conftest.py                                      15      0   100%
+manage.py                                        11     11     0%   3-22
+users/__init__.py                                 0      0   100%
+users/admin.py                                    9      0   100%
+users/apps.py                                     5      0   100%
+users/migrations/0001_initial.py                  5      0   100%
+users/migrations/0002_alter_user_options.py       4      0   100%
+users/migrations/__init__.py                      0      0   100%
+users/models.py                                  39      3    92%   16, 40, 42
+users/serializers.py                             17      0   100%
+users/test_users.py                              58      0   100%
+users/tests.py                                    1      0   100%
+users/urls.py                                     3      0   100%
+users/views.py                                   61      3    95%   91, 146, 177
+---------------------------------------------------------------------------
+TOTAL                                           493     29    94%
+======================== 18 passed, 1 warning in 17.69s ========================

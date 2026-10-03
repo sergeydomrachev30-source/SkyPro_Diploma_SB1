@@ -1,0 +1,14 @@
+[flake8]
+# Игнорируем автосгенерированные миграции, виртуальные окружения и системные файлы
+exclude =
+    .git,
+    __pycache__,
+    migrations,
+    venv,
+    .venv,
+    manage.py,
+    config/asgi.py,
+    config/wsgi.py
+
+# Максимально допустимая длина строки по PEP 8 (или 88 для совместимости с Black)
+max-line-length = 119
